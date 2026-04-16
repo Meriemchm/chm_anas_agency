@@ -5,11 +5,13 @@ import { SocialProofCard } from "./socialProofCard";
 
 // Tes données (Peuvent être déplacées dans un fichier data.js)
 const dataSocialProof = [
-  { id: 1, name: "Logo 1", logoUrl: "https://logoipsum.com/api/all.svg" },
-  { id: 2, name: "Logo 2", logoUrl: "https://logoipsum.com/api/211.svg" },
-  { id: 3, name: "Logo 3", logoUrl: "https://logoipsum.com/api/225.svg" },
-  { id: 4, name: "Logo 4", logoUrl: "https://logoipsum.com/api/250.svg" },
-  { id: 5, name: "Logo 5", logoUrl: "https://logoipsum.com/api/251.svg" },
+  { id: 1, name: "wwf", logoUrl: "/Logos/wwf-4-logo-svg-vector.svg" },
+  { id: 2, name: "Logo 2", logoUrl: "/Logos/apex-legends-logo.svg" },
+  { id: 3, name: "Logo 3", logoUrl: "/Logos/pizza-hut-logo.svg" },
+  { id: 4, name: "Logo 4", logoUrl: "/Logos/téléchargement (1).jpg" },
+  { id: 5, name: "Logo 5", logoUrl: "/Logos/Pathe Logo Vector.svg .png" },
+  { id: 6, name: "Logo 5", logoUrl: "/Logos/téléchargement (2).jpg" },
+  { id: 7, name: "Logo 5", logoUrl: "/Logos/téléchargement (3).png" },
 ];
 
 export const SocialProof = () => {
