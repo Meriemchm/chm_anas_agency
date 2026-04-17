@@ -7,4 +7,5 @@ export const SocialProofData = [
   { id: 5, name: "Logo 5", logoUrl: "/Logos/Pathe Logo Vector.svg .png" },
   { id: 6, name: "Logo 5", logoUrl: "/Logos/téléchargement (2).jpg" },
   { id: 7, name: "Logo 5", logoUrl: "/Logos/téléchargement (3).png" },
+  { id: 8, name: "Logo 5", logoUrl: "/Logos/téléchargement (3).jpg" },
 ];
