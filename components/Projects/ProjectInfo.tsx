@@ -3,7 +3,7 @@
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface Social {
   instagram?: string;
@@ -17,7 +17,8 @@ interface Props {
   avatar?: string;
 }
 
-const container = {
+/* ✅ IMPORTANT: type Variants */
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -28,14 +29,14 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: "easeOut" as const, // 👈 FIX IMPORTANT
     },
   },
 };
@@ -54,16 +55,13 @@ export const ProjectInfo = ({
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
     >
-
       {/* LEFT */}
       <motion.div className="flex flex-col gap-8 w-full" variants={container}>
-
         {/* PROFILE + SOCIAL */}
         <motion.div
           className="flex items-center justify-between w-full gap-6"
           variants={item}
         >
-
           {/* PROFILE */}
           <div className="flex items-center gap-4">
             <div className="size-11 rounded-full bg-gray-800 overflow-hidden ring-1 ring-white/20 flex-shrink-0">
@@ -114,7 +112,6 @@ export const ProjectInfo = ({
         >
           {description}
         </motion.p>
-
       </motion.div>
     </motion.div>
   );

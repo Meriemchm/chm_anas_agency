@@ -34,7 +34,7 @@ const ProcessRail = ({ x, progress, data }: Props) => {
       <div className="absolute top-1/3 left-0 w-[300%] -translate-y-1/2 pointer-events-none">
         <svg
           viewBox="0 0 2000 200"
-          className="w-full h-[200px] opacity-40"
+          className="w-full h-50 opacity-40"
           preserveAspectRatio="none"
         >
           <path

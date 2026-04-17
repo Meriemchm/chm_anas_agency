@@ -11,7 +11,7 @@ export const Navbar = () => {
   const [activeTab, setActiveTab] = useState("Home");
 
   return (
-    <nav className="relative z-[60] px-14 py-4 flex items-center justify-between bg-black lg:bg-white/80 lg:backdrop-blur-md">
+    <nav className="relative z-60 px-14 py-4 flex items-center justify-between bg-black lg:bg-white/80 lg:backdrop-blur-md">
       {/* LOGO */}
       <Link href="/" className="text-2xl text-white lg:text-[#1b1d1e]">
         Pygmalion

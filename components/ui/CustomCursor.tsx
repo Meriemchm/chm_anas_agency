@@ -25,7 +25,7 @@ export const CursorEffect = ({
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const positions = useRef<{ x: number; y: number; age: number }[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   const TRAIL_LENGTH = 25;
   const FADE_SPEED = 0.05;

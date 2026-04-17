@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import UIButton from "../ui/UIButton";
 import { CursorEffect } from "../ui/CustomCursor";
 import { FloatingIcon } from "../ui/FloatingIcon";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
@@ -18,7 +18,7 @@ const containerVariants = {
   },
 };
 
-const textVariants = {
+const textVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 60,
@@ -31,21 +31,21 @@ const textVariants = {
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 200,
       damping: 20,
     },
   },
 };
 
-const buttonVariants = {
+const buttonVariants: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.9 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 260,
       damping: 18,
     },
@@ -88,10 +88,8 @@ export const Hero = () => {
           {/* TITLE WRAPPER */}
           <div className="relative inline-block">
 
-            {/* FLOATING ICON COMPONENT */}
             <FloatingIcon className="absolute -top-10 right-0 md:-top-15 md:-right-6" />
 
-            {/* TITLE */}
             <motion.h1
               variants={textVariants}
               className="text-5xl md:text-7xl lg:text-[120px] italic text-[#1b1d1e] tracking-tighter leading-[1]"
@@ -100,7 +98,6 @@ export const Hero = () => {
             </motion.h1>
           </div>
 
-          {/* SUBTITLE */}
           <motion.span
             variants={textVariants}
             className="text-2xl md:text-4xl lg:text-6xl font-serif text-[#1b1d1e] leading-[1.1]"
