@@ -8,6 +8,7 @@ interface ServiceCardProps {
   title: string;
   description: string;
   isHighlighted?: boolean;
+  isPrimary?: boolean;
   onHover?: () => void;
 }
 
@@ -16,6 +17,7 @@ export const ServiceCard = ({
   title,
   description,
   isHighlighted,
+  isPrimary,
   onHover,
 }: ServiceCardProps) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,11 +35,13 @@ export const ServiceCard = ({
       whileHover={!isMobile ? { y: -8, scale: 1.02 } : undefined}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
       className={`
-        rounded-2xl border p-6 md:p-8 bg-white
+        rounded-2xl border p-6 md:p-8
         h-full min-h-[320px] flex flex-col
         transition-colors duration-300
-        hover:bg-[#FFF083] select-none
-        ${isHighlighted ? "bg-[#FFF083] border-transparent" : "border-gray-200"}
+        select-none
+
+        ${isPrimary ? "bg-primary border-transparent text-black" : ""}
+        ${!isPrimary && !isHighlighted ? "bg-white border-gray-200" : ""}
       `}
     >
       {/* ICON */}

@@ -1,6 +1,6 @@
 "use client";
-import { Eye, Users, TrendingUp } from "lucide-react";
 
+import { Eye, Users, TrendingUp } from "lucide-react";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectGrid } from "./projectGrid";
@@ -11,26 +11,25 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="bg-white py-10 px-4 md:px-6">
-      {/* CARD WRAPPER */}
+
       <motion.div
         initial={{ opacity: 0, y: 80, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          ease: [0.22, 1, 0.36, 1],
-        }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true, amount: 0.2 }}
         className="bg-black rounded-2xl py-20 px-6 min-h-screen mx-auto max-w-8xl"
       >
+
         <div className="space-y-12">
+
           {/* TITLE */}
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center text-5xl md:text-6xl font-['Instrument_Serif',serif] italic text-white"
+            className="text-center text-4xl md:text-5xl font-extralight text-white"
           >
-            Nos Projets
+            Nos <span className="font-serif italic">Projets</span>
           </motion.h2>
 
           {/* TABS */}
@@ -43,14 +42,24 @@ export const Projects = () => {
             {Object.keys(projectsData).map((client, i) => (
               <motion.button
                 key={client}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
+                initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{
+                  delay: i * 0.05,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 18,
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -2,
+                }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => setActiveTab(client)}
-                className={`px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 border
+                className={`px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer border
                   ${
                     activeTab === client
-                      ? "bg-[#FFF083] text-black border-transparent"
+                      ? "bg-primary text-black border-transparent"
                       : "bg-transparent text-white border-gray-700 hover:border-white"
                   }
                 `}
@@ -75,6 +84,7 @@ export const Projects = () => {
                   projects={projectsData[activeTab].videos}
                   description={projectsData[activeTab].description}
                   social={projectsData[activeTab].social}
+                  avatar={projectsData[activeTab].avatar}
                 />
               </motion.div>
             </AnimatePresence>
@@ -82,26 +92,36 @@ export const Projects = () => {
 
           {/* STATS */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center items-center border-t border-gray-800 text-gray-500 gap-2 pt-8 mt-20 "
+            className="flex  justify-center items-center border-t flex-wrap border-gray-800 text-gray-500 md:gap-4 pt-8 mt-20 text-xs "
           >
-            <div className="flex items-center gap-2">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center md:gap-2"
+            >
               <Eye size={16} />
               {projectsData[activeTab].stats.views} |
-            </div>
+            </motion.div>
 
-            <div className="flex items-center gap-2">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center md:gap-2"
+            >
               <Users size={16} />
               {projectsData[activeTab].stats.followers} |
-            </div>
+            </motion.div>
 
-            <div className="flex items-center gap-2">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center md:gap-2"
+            >
               <TrendingUp size={16} />
               {projectsData[activeTab].stats.engagement}
-            </div>
+            </motion.div>
           </motion.div>
+
         </div>
       </motion.div>
     </section>

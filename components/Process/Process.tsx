@@ -23,10 +23,9 @@ export const Process = () => {
       className="relative h-[600vh] bg-white"
     >
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
-
         <ProcessTitle />
 
-        <ProcessRail x={x} data={ProcessData} />
+        <ProcessRail x={x} progress={scrollYProgress} data={ProcessData} />
 
         <div className="absolute bottom-10 left-6 md:left-20 right-6 md:right-20 h-[1px] bg-gray-200 z-30">
           <motion.div
@@ -34,7 +33,6 @@ export const Process = () => {
             className="h-full bg-black origin-left"
           />
         </div>
-
       </div>
     </div>
   );

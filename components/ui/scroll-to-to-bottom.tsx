@@ -25,7 +25,7 @@ export default function ScrollToTopButton() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.8 }}
       transition={{ duration: 0.3 }}
-      className="fixed bottom-6 right-6 z-100 bg-white text-black px-4 py-2 rounded-full shadow-lg text-sm cursor-pointer"
+      className="fixed bottom-6 right-6 z-100 bg-white border-2 border-black text-black px-4 py-2 rounded-full shadow-lg text-sm cursor-pointer"
       style={{ pointerEvents: visible ? "auto" : "none" }}
     >
       ↑ Top

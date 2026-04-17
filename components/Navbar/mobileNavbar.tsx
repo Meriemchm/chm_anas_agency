@@ -1,31 +1,44 @@
-import { NavbarData } from "@/data/NavbarData";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+"use client";
 
-const menuVariants = {
+import { NavbarData } from "@/data/NavbarData";
+import { AnimatePresence, motion, Variants } from "framer-motion";
+import Link from "next/link";
+import React from "react";
+
+interface NavbarItem {
+  name: string;
+  link: string;
+}
+
+interface MobileNavbarProps {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
+
+const menuVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       staggerChildren: 0.08,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
 
-export const MobileNavbar = ({ isOpen, setIsOpen }) => {
+export const MobileNavbar = ({ isOpen, setIsOpen }: MobileNavbarProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -36,13 +49,16 @@ export const MobileNavbar = ({ isOpen, setIsOpen }) => {
           exit="hidden"
           className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-10 lg:hidden"
         >
-          {NavbarData.map((item) => (
+          {NavbarData.map((item: NavbarItem) => (
             <motion.a
               variants={itemVariants}
               key={item.name}
               href={item.link}
-              onClick={() => setIsOpen(false)}
-              className="text-4xl sm:text-5xl font-['Abel'] text-white"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="text-4xl sm:text-5xl font-extralight text-white"
             >
               {item.name}
             </motion.a>

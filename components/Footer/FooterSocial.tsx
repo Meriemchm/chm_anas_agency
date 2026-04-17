@@ -12,12 +12,14 @@ export const FooterSocial = ({ social }: any) => {
           <motion.a
             key={i}
             href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{
               y: -3,
               backgroundColor: "white",
               color: "black",
             }}
-            className="size-10 rounded-full border border-white/20 flex items-center justify-center text-lg transition-colors duration-300"
+            className="size-10 rounded-full border border-white/20 flex items-center justify-center text-lg hover:scale-105 duration-200"
           >
             <Icon />
           </motion.a>

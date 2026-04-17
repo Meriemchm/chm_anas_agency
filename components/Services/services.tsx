@@ -53,9 +53,9 @@ export const Services = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-full md:w-1/4"
       >
-        <h2 className="text-5xl md:text-6xl font-['Abel',sans-serif] leading-tight">
+        <h2 className="text-5xl md:text-6xl font-extralight leading-tight">
           Nos <br />
-          <span className="font-['Instrument_Serif',serif] italic">
+          <span className="font-serif">
             services
           </span>
         </h2>
@@ -69,10 +69,11 @@ export const Services = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {servicesData.map((service) => (
+        {servicesData.map((service, index) => (
           <motion.div key={service.id} variants={itemVariants}>
             <ServiceCard
               {...service}
+              isPrimary={index === 0}
               isHighlighted={service.id === expandedId}
               onHover={() => setExpandedId(service.id)}
             />

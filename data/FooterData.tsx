@@ -1,4 +1,10 @@
-import { FaInstagram, FaFacebookF, FaYoutube, FaTiktok, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaTiktok,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const footerData = {
@@ -10,16 +16,22 @@ export const footerData = {
 
   social: [
     { icon: FaInstagram, href: "https://www.instagram.com/pygmalionagency/" },
-    { icon: FaTiktok, href: "https://www.tiktok.com/@pygmalionagency?is_from_webapp=1&sender_device=pc " },
-    { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/pygmalion-agency-undefined-43751b402/?skipRedirect=true" },
+    {
+      icon: FaTiktok,
+      href: "https://www.tiktok.com/@pygmalionagency?is_from_webapp=1&sender_device=pc ",
+    },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/in/pygmalion-agency-undefined-43751b402/?skipRedirect=true",
+    },
   ],
 
   links: [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Our team", href: "#ourteam" },
-    { label: "About Us", href: "#aboutus" },
+    {  name: "Home", link: "#hero" },
+    {  name: "Services", link: "#services" },
+    {  name: "Projets", link: "#projects" },
+    {  name: "À propos", link: "#about" },
+    {  name: "Processus", link: "#process" },
   ],
 
   contact: {
@@ -27,4 +39,3 @@ export const footerData = {
     phone: "0483563639",
   },
 };
-

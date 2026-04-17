@@ -10,6 +10,7 @@ import InputField from "../ui/InputField";
 import MultiSelect from "../ui/MultiSelect";
 import SuccessState from "../ui/SuccessState";
 import { ContactFields, ServicesSelect } from "@/data/ContactData";
+import UIButton from "../ui/UIButton";
 
 export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,10 +47,30 @@ export const ContactForm = () => {
     }
   };
 
-
-
   return (
-    <motion.div className="w-full space-y-12">
+    <motion.div
+      className="w-full space-y-12"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+
+      {/* 🔥 BIG TITLE
+      <div className="text-left space-y-3">
+        <motion.h2
+          className="text-4xl md:text-8xl font-bold tracking-tight text-Black"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Contact
+        </motion.h2>
+
+      </div> */}
+
+      {/* FORM / SUCCESS */}
       {isSubmitted ? (
         <SuccessState
           onReset={() => {
@@ -74,9 +95,8 @@ export const ContactForm = () => {
             />
           ))}
 
-          {/* ROW : COMPANY + SERVICE */}
+          {/* COMPANY + SERVICE */}
           <div className="md:col-span-2 grid grid-cols-2 gap-x-10">
-            {/* TYPE ENTREPRISE */}
             <InputField
               name="company"
               type="text"
@@ -85,7 +105,6 @@ export const ContactForm = () => {
               error={errors.company}
             />
 
-            {/* MULTI SELECT */}
             <Controller
               name="service"
               control={control}
@@ -114,21 +133,9 @@ export const ContactForm = () => {
 
           {/* BUTTON */}
           <div className="md:col-span-2">
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="
-                bg-[#FFF083] text-black
-                px-12 py-4
-                rounded-full text-sm font-medium
-                shadow-sm
-                hover:shadow-md
-                transition
-                disabled:opacity-50
-              "
-            >
-              {isLoading ? "Envoi..." : "Envoyer"}
-            </button>
+            <UIButton type="submit" isLoading={isLoading}>
+              Envoyer
+            </UIButton>
           </div>
         </form>
       )}

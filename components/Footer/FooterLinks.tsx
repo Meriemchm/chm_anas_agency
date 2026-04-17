@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const FooterLinks = ({ links }: any) => {
   return (
     <div className="space-y-6">
@@ -7,13 +9,13 @@ export const FooterLinks = ({ links }: any) => {
 
       <ul className="space-y-4">
         {links.map((link: any) => (
-          <li key={link.label}>
-            <a
-              href={link.href}
+          <li key={link.name}>
+            <Link
+              href={link.link}
               className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
             >
-              {link.label}
-            </a>
+              {link.name}
+            </Link>
           </li>
         ))}
       </ul>

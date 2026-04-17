@@ -26,10 +26,10 @@ export const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center text-5xl md:text-6xl font-['Abel',sans-serif] leading-tight text-[#1b1d1e]"
+          className="text-center text-5xl md:text-6xl font-extralight leading-tight text-[#1b1d1e]"
         >
           {aboutData.title.main} <br />
-          <span className="font-['Instrument_Serif',serif] italic">
+          <span className="font-serif">
             {aboutData.title.agency}
           </span>
         </motion.div>

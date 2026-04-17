@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 // Variantes d'animation pour l'apparition
 const cardVariants = {
@@ -19,7 +20,7 @@ const cardVariants = {
 interface CardProps {
   type: "bio" | "vision" | "philosophy" | "quote";
   tag: string;
-  content?: string;
+  content?: any;
   title?: string;
   description?: string;
   imageUrl?: string;
@@ -41,7 +42,8 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
     gridSpan = "",
   } = card;
 
-  // Définition des classes de base et de thème
+  const [isOpen, setIsOpen] = useState(false);
+
   const baseClasses = `rounded-[24px] p-8 md:p-10 ${gridSpan} flex flex-col justify-between h-full border transition-colors duration-300`;
 
   const themes = {
@@ -56,11 +58,9 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }} // Petit effet au survol
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
       className={`relative ${baseClasses} ${currentTheme}`}
     >
-      {/* --- Rendu conditionnel selon le type de carte --- */}
-
       {type === "bio" && (
         <>
           <div className="absolute top-0 right-0 pointer-events-none">
@@ -69,6 +69,7 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
               alt="decor"
               width={250}
               height={250}
+              className="w-24 h-24 md:w-full md:h-full"
             />
           </div>
 
@@ -76,9 +77,28 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
             {tag}
           </span>
 
-          <p className="text-sm md:text-base leading-relaxed font-light">
-            {content}
-          </p>
+          {/* DESKTOP (inchangé) + MOBILE TOGGLE */}
+          <div className="group relative">
+            {/* COLLAPSED VIEW (mobile + default) */}
+            <div className="text-sm font-extralight leading-relaxed md:group-hover:hidden">
+              <div className={`${isOpen ? "" : "line-clamp-4"}`}>
+                {content}
+              </div>
+            </div>
+
+            {/* EXPANDED VIEW (desktop hover only) */}
+            <div className="hidden md:group-hover:block text-sm font-extralight leading-relaxed">
+              {content}
+            </div>
+
+            {/* MOBILE BUTTON */}
+            <button
+              className="md:hidden mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? "Show less" : "Read more"}
+            </button>
+          </div>
         </>
       )}
 
@@ -106,10 +126,11 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
               {content}
             </p>
           </div>
+
           {imageUrl && (
             <div className="rounded-2xl overflow-hidden mt-auto aspect-4/3">
               <Image
-                src="/Images/about-image.png"
+                src={imageUrl}
                 height={500}
                 width={500}
                 alt="Slogan illustration"
@@ -130,6 +151,7 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
               {quote}
             </blockquote>
           </div>
+
           <p className="text-sm md:text-base leading-relaxed text-gray-700 mt-12 font-light max-w-4xl">
             {description}
           </p>
