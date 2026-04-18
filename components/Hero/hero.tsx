@@ -117,7 +117,7 @@ export const Hero = () => {
               iconSize={35}
               withIconBg
             >
-              Voir mes projets
+              Voir nos projets
             </UIButton>
           </motion.div>
         </Link>
