@@ -79,24 +79,24 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
 
           {/* DESKTOP (inchangé) + MOBILE TOGGLE */}
           <div className="group relative">
-            {/* COLLAPSED VIEW (mobile + default) */}
-            <div className="text-sm font-extralight leading-relaxed md:group-hover:hidden">
+            {/* COLLAPSED VIEW (mobile + default) md:group-hover:hidden */}
+            <div className="text-sm font-extralight leading-relaxed ">
               <div className={`${isOpen ? "" : "line-clamp-4"}`}>
                 {content}
               </div>
             </div>
 
             {/* EXPANDED VIEW (desktop hover only) */}
-            <div className="hidden md:group-hover:block text-sm font-extralight leading-relaxed">
+            {/* <div className="hidden md:group-hover:block text-sm font-extralight leading-relaxed">
               {content}
-            </div>
+            </div> */}
 
             {/* MOBILE BUTTON */}
             <button
-              className="md:hidden mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4"
+              className=" mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? "Show less" : "Read more"}
+              {isOpen ? "Voir moins" : "Voir plus"}
             </button>
           </div>
         </>
