@@ -64,13 +64,15 @@ export const ProjectInfo = ({
         >
           {/* PROFILE */}
           <div className="flex items-center gap-4">
-            <div className="size-11 rounded-full bg-gray-800 overflow-hidden ring-1 ring-white/20 flex-shrink-0">
+            <div className="size-11 rounded-full overflow-hidden ring-1 ring-white/20 shrink-0">
               {avatar && (
                 <Image
                   src={avatar}
                   alt={clientName}
                   width={44}
                   height={44}
+                  priority
+                  sizes="44px"
                   className="w-full h-full object-cover"
                 />
               )}

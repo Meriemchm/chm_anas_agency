@@ -69,7 +69,7 @@ export const projectsData: Record<string, Project> = {
       </>
     ),
     videos: [
-      { id: 5, url: "Videos/La maison crétions/La maison créations 1_.mp4", poster: "Videos/La maison crétions/poster/La maison créations 1.jpg" },
+      { id: 5, url: "Videos/La maison crétions/La maison créations 1_.mp4", poster: "Videos/La maison crétions/poster/La maison créations 1_.jpg" },
       { id: 6, url: "Videos/La maison crétions/La maison créations 2.mp4", poster: "Videos/La maison crétions/poster/La maison créations 2.jpg" },
       { id: 7, url: "Videos/La maison crétions/La maison créations 3.mp4", poster: "Videos/La maison crétions/poster/La maison créations 3.jpg" },
       { id: 8, url: "Videos/La maison crétions/La maison créations 5.mp4", poster: "Videos/La maison crétions/poster/La maison créations 5.jpg" },
