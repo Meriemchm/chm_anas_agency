@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const FooterContact = ({ contact }: any) => {
   return (
     <div className="space-y-6">
@@ -11,12 +13,12 @@ export const FooterContact = ({ contact }: any) => {
         </p>
 
         <p>
-          <a
+          <Link
             href={`mailto:${contact.email}`}
             className="hover:text-[#FFF083] transition-colors"
           >
             {contact.email}
-          </a>
+          </Link>
         </p>
 
         <p className="font-mono text-gray-400">{contact.phone}</p>
