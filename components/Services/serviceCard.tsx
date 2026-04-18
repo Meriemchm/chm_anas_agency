@@ -35,13 +35,13 @@ export const ServiceCard = ({
       whileHover={!isMobile ? { y: -8, scale: 1.02 } : undefined}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
       className={`
-        rounded-2xl border p-6 md:p-8
+        rounded-2xl md:border p-6 md:p-8
         h-full min-h-[320px] flex flex-col
         transition-colors duration-300
         select-none
 
         ${isPrimary ? "bg-primary border-transparent text-black" : ""}
-        ${!isPrimary && !isHighlighted ? "bg-white border-gray-200" : ""}
+        ${!isPrimary && !isHighlighted ? "bg-white border border-gray-200" : ""}
       `}
     >
       {/* ICON */}

@@ -93,7 +93,7 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
 
             {/* MOBILE BUTTON */}
             <button
-              className=" mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4"
+              className=" mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4 cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? "Voir moins" : "Voir plus"}
