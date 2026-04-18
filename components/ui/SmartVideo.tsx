@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { useInView } from "framer-motion";
 
 interface SmartVideoProps {
   src: string;
@@ -15,33 +14,26 @@ export const SmartVideo = ({
   autoPlay = false,
 }: SmartVideoProps) => {
   const ref = useRef<HTMLVideoElement | null>(null);
-  const isInView = useInView(ref, { margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    const tryPlay = async () => {
+    const playVideo = async () => {
       try {
         await video.play();
       } catch (e) {
-        // iOS bloque parfois → on ignore
+        // ignore iOS block
       }
     };
 
-    if ((autoPlay && isInView) || isHovered) {
-      if (video.readyState >= 2) {
-        tryPlay();
-      } else {
-        video.onloadeddata = () => {
-          tryPlay();
-        };
-      }
+    if (autoPlay || isHovered) {
+      playVideo();
     } else {
       video.pause();
     }
-  }, [isInView, isHovered, autoPlay]);
+  }, [autoPlay, isHovered]);
 
   return (
     <video
@@ -50,9 +42,8 @@ export const SmartVideo = ({
       muted
       loop
       playsInline
-      autoPlay={autoPlay} // ✅ CRUCIAL pour iOS
-      preload="auto" // ✅ CRUCIAL
-      webkit-playsinline="true" // ✅ pour Safari iOS
+      autoPlay
+      preload="auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

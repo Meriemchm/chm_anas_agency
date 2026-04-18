@@ -59,7 +59,11 @@ export const ProjectVideos = ({ projects }: Props) => {
         variants={item}
         className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:h-[500px]"
       >
-        <video src={projects[0]?.url} controls className="w-full" />
+        <SmartVideo
+          autoPlay
+          src={projects[0]?.url}
+          className="w-full h-full object-cover"
+        />
       </motion.div>
 
       {/* MIDDLE */}
@@ -74,14 +78,20 @@ export const ProjectVideos = ({ projects }: Props) => {
           variants={item}
           className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto"
         >
-          <video src={projects[1]?.url} controls className="w-full" />
+          <SmartVideo
+            src={projects[1]?.url}
+            className="w-full h-full object-cover"
+          />
         </motion.div>
 
         <motion.div
           variants={item}
           className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto"
         >
-          <video src={projects[2]?.url} controls className="w-full" />
+          <SmartVideo
+            src={projects[2]?.url}
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </motion.div>
 
@@ -90,7 +100,10 @@ export const ProjectVideos = ({ projects }: Props) => {
         variants={item}
         className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:h-[500px]"
       >
-        <video src={projects[3]?.url} controls className="w-full" />
+        <SmartVideo
+          src={projects[3]?.url}
+          className="w-full h-full object-cover"
+        />
       </motion.div>
     </motion.div>
   );
