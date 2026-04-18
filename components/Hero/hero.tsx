@@ -6,6 +6,7 @@ import Link from "next/link";
 import UIButton from "../ui/UIButton";
 import { CursorEffect } from "../ui/CustomCursor";
 import { FloatingIcon } from "../ui/FloatingIcon";
+import CurveBackground from "../ui/CurveBackground";
 
 const containerVariants: Variants = {
   hidden: { opacity: 1 },
@@ -82,12 +83,14 @@ export const Hero = () => {
         initial="hidden"
         animate="visible"
       >
+        {" "}
+        <div className="absolute top-1/5 md:top-1/8 left-0 w-[300%] -translate-y-1/2 pointer-events-none">
+          <CurveBackground  />{" "}
+        </div>
         {/* TEXT */}
         <motion.div className="flex flex-col items-center text-center max-w-6xl z-10 space-y-2 md:space-y-4">
-
           {/* TITLE WRAPPER */}
           <div className="relative inline-block">
-
             <FloatingIcon className="absolute -top-12 right-0 md:-top-15 md:-right-6" />
 
             <motion.h1
@@ -105,13 +108,9 @@ export const Hero = () => {
             Agence de marketing / communication
           </motion.span>
         </motion.div>
-
         {/* BUTTON */}
         <Link href="#projects" aria-label="Voir les projets">
-          <motion.div
-            variants={buttonVariants}
-            className="mt-10 md:mt-16 z-10"
-          >
+          <motion.div variants={buttonVariants} className="mt-10 md:mt-16 z-10">
             <UIButton
               variant="primary"
               icon="/Vector/up-2.svg"
