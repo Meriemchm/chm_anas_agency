@@ -88,7 +88,7 @@ export const Hero = () => {
           {/* TITLE WRAPPER */}
           <div className="relative inline-block">
 
-            <FloatingIcon className="absolute -top-10 right-0 md:-top-15 md:-right-6" />
+            <FloatingIcon className="absolute -top-12 right-0 md:-top-15 md:-right-6" />
 
             <motion.h1
               variants={textVariants}

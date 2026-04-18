@@ -28,9 +28,13 @@ export const projectsData: Record<string, Project> = {
   "Mobile M": {
     description: (
       <>
-        J’ai accompagné <b>Mobile M</b> dans le développement de sa visibilité sur les réseaux sociaux, en mettant en avant son magasin et ses produits à travers du contenu simple et efficace. 
-        Ce travail a permis de faire connaître davantage l’enseigne et d’attirer de <b>nouveaux clients</b> en magasin. 
-        L’objectif était aussi de renforcer <b>la présence en ligne</b>, ce qui a contribué à améliorer la fidélisation, avec des clients qui reviennent régulièrement.
+        J’ai accompagné <b>Mobile M</b> dans le développement de sa visibilité
+        sur les réseaux sociaux, en mettant en avant son magasin et ses produits
+        à travers du contenu simple et efficace. Ce travail a permis de faire
+        connaître davantage l’enseigne et d’attirer de <b>nouveaux clients</b>{" "}
+        en magasin. L’objectif était aussi de renforcer{" "}
+        <b>la présence en ligne</b>, ce qui a contribué à améliorer la
+        fidélisation, avec des clients qui reviennent régulièrement.
       </>
     ),
     videos: [
@@ -40,12 +44,14 @@ export const projectsData: Record<string, Project> = {
       { id: 8, url: "Videos/Mobile m/trend .mp4" },
     ],
     stats: {
-      views: "+100 000 vues",
-      followers: "+1 000 abonnés sur TikTok",
-      engagement: "Audience engagée | Acquisition maîtrisée",
+      views: "+2M de vues générées",
+      followers: "+6 000 abonnés",
+      engagement:
+        "Forte rétention d’audience | Acquisition organique maîtrisée",
     },
     avatar: "/Images/avatar-3.png",
     social: {
+      instagram: "https://www.instagram.com/mobilem.be?igsh=Nzd4bzhvM21saW14",
       tiktok: "https://www.tiktok.com/@mobilem.be",
     },
   },
@@ -53,8 +59,12 @@ export const projectsData: Record<string, Project> = {
   "La maison créations": {
     description: (
       <>
-        Avec <b>La Maison Créations</b>, j’ai aidé à rendre plus compréhensibles des services liés à l’administratif et aux démarches juridiques, souvent perçus comme compliqués. 
-        À travers des vidéos simples et claires, l’objectif était <b>d’expliquer les services proposés</b> et de mettre en avant l’accompagnement disponible entre la Belgique et le Maroc.
+        J’ai accompagné La Maison Création dans sa{" "}
+        <b>communication lors de son lancement</b>, en mettant en avant ses
+        services de personnalisation à travers du <b>contenu vidéo</b>. Cela a
+        permis de mieux faire connaître la marque et de{" "}
+        <b>susciter de l’intérêt pour ses services</b>, notamment pour les
+        cadeaux personnalisés comme les anniversaires ou les mariages.
       </>
     ),
     videos: [
@@ -64,22 +74,25 @@ export const projectsData: Record<string, Project> = {
       { id: 8, url: "Videos/La maison crétions/La maison créations 5.mp4" },
     ],
     stats: {
-      views: "+500 000 vues",
-      followers: "+5 000 abonnés",
-      engagement: "Viralité maîtrisée",
+      views: "+100 000 vues générées",
+      followers: "+1 000 abonnés sur TikTok",
+      engagement: "Audience engagée | Acquisition organique maîtrisée",
     },
     avatar: "/Images/avatar-2.png",
     social: {
-      instagram: "https://www.instagram.com/edemarches",
-      tiktok: "https://www.tiktok.com/@easy.dmarches",
+      tiktok: "https://www.tiktok.com/@la.maison.creations",
     },
   },
 
   "Easy démarches": {
     description: (
       <>
-        J’ai accompagné <b>Easy démarches</b> dans sa communication lors de son lancement, <b>en mettant en avant</b> ses services de personnalisation à travers du <b>contenu vidéo</b>. 
-        Cela a permis de mieux faire connaître la marque et de <b>susciter de l’intérêt pour ses services</b>, notamment pour les cadeaux personnalisés comme les anniversaires ou les mariages.
+        Avec <b>EasyDémarches</b>, j’ai aidé à rendre plus compréhensibles des
+        services liés à l’administratif et aux démarches juridiques, souvent
+        perçus comme compliqués. <b>À travers des vidéos simples et claires</b>,
+        l’objectif était d’expliquer les services proposés et de mettre en avant
+        l’accompagnement disponible entre la Belgique et le Maroc, notamment
+        pour les démarches consulaires et administratives.
       </>
     ),
     videos: [
@@ -89,13 +102,14 @@ export const projectsData: Record<string, Project> = {
       { id: 4, url: "Videos/Easy démarches/Vidéo 4.mp4" },
     ],
     stats: {
-      views: "+200 000 vues",
-      followers: "+2 500 abonnés",
-      engagement: "Lead generation boostée",
+      views: "+100 000 vues générées",
+      followers: "+1 000 abonnés sur tiktok et 800 sur instagram",
+      engagement: "Audience engagée | Acquisition organique maîtrisée",
     },
     avatar: "/Images/avatar-1.png",
     social: {
-      tiktok: "https://www.tiktok.com/@la.maison.creations",
+      instagram: "https://www.instagram.com/edemarches",
+      tiktok: "https://www.tiktok.com/@easy.dmarches",
     },
   },
 };
