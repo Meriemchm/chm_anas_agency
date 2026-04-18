@@ -22,8 +22,22 @@ export const SmartVideo = ({
     const video = ref.current;
     if (!video) return;
 
+    const tryPlay = async () => {
+      try {
+        await video.play();
+      } catch (e) {
+        // iOS bloque parfois → on ignore
+      }
+    };
+
     if ((autoPlay && isInView) || isHovered) {
-      video.play().catch(() => {});
+      if (video.readyState >= 2) {
+        tryPlay();
+      } else {
+        video.onloadeddata = () => {
+          tryPlay();
+        };
+      }
     } else {
       video.pause();
     }
@@ -36,7 +50,9 @@ export const SmartVideo = ({
       muted
       loop
       playsInline
-      preload="metadata"
+      autoPlay={autoPlay} // ✅ CRUCIAL pour iOS
+      preload="auto" // ✅ CRUCIAL
+      webkit-playsinline="true" // ✅ pour Safari iOS
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
