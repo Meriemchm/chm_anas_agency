@@ -17,17 +17,17 @@ export const ProjectsStats = ({ activeTab }: Props) => {
       transition={{ duration: 0.6 }}
       className="flex justify-center items-center border-t flex-wrap border-gray-800 text-gray-500 md:gap-4 pt-8 mt-20 text-xs"
     >
-      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center md:gap-2">
+      <motion.div whileHover={{ scale: 1.05 }} className="flex text-center md:items-center  gap-1 md:gap-2">
         <Eye size={16} />
         {projectsData[activeTab].stats.views} |
       </motion.div>
 
-      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center md:gap-2">
+      <motion.div whileHover={{ scale: 1.05 }} className="flex text-center md:items-center gap-1 md:gap-2">
         <Users size={16} />
         {projectsData[activeTab].stats.followers} |
       </motion.div>
 
-      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center md:gap-2">
+      <motion.div whileHover={{ scale: 1.05 }} className="flex text-center md:items-center gap-1 md:gap-2">
         <TrendingUp size={16} />
         {projectsData[activeTab].stats.engagement}
       </motion.div>
