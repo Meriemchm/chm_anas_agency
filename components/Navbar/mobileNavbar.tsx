@@ -4,6 +4,7 @@ import { NavbarData } from "@/data/NavbarData";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Link from "next/link";
 import React from "react";
+import { NavLink } from "./NavLink";
 
 interface NavbarItem {
   name: string;
@@ -50,18 +51,16 @@ export const MobileNavbar = ({ isOpen, setIsOpen }: MobileNavbarProps) => {
           className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center gap-10 lg:hidden"
         >
           {NavbarData.map((item: NavbarItem) => (
-            <motion.a
-              variants={itemVariants}
+            <div
               key={item.name}
-              href={item.link}
               onClick={(e) => {
                 e.stopPropagation();
                 setIsOpen(false);
               }}
               className="text-4xl sm:text-5xl font-extralight text-white"
             >
-              {item.name}
-            </motion.a>
+              <NavLink label={item.name} href={item.link} />
+            </div>
           ))}
 
           <motion.div variants={itemVariants}>

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -14,44 +15,43 @@ export const NavLink = ({ label, href, isActive, onClick }: NavLinkProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
     const isHash = href.startsWith("#") || href.startsWith("/#");
     const id = href.replace("/#", "").replace("#", "");
 
-    // 🚨 NAVIGATION normale (page classique)
     if (!isHash) {
       router.push(href);
       onClick?.();
       return;
     }
 
-    // 🟢 CAS 1 : on est sur /contact
     if (pathname === "/contact") {
       sessionStorage.setItem("scrollTo", id);
       router.push("/");
-
       onClick?.();
       return;
     }
 
-    // 🟡 CAS 2 : déjà sur home
     if (pathname === "/") {
       const el = document.getElementById(id);
-
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-
+      if (el) el.scrollIntoView({ behavior: "smooth" });
       onClick?.();
       return;
     }
 
-    // 🟠 fallback (autre page)
     sessionStorage.setItem("scrollTo", id);
     router.push("/");
-
     onClick?.();
   };
 
@@ -59,11 +59,16 @@ export const NavLink = ({ label, href, isActive, onClick }: NavLinkProps) => {
     <Link
       href={href}
       onClick={handleClick}
-      className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-        isActive
-          ? "bg-white text-black shadow-sm"
-          : "text-gray-500 hover:text-black"
-      }`}
+      className={`
+        px-6 py-3 rounded-full transition-all duration-300
+        ${
+          isMobile
+            ? "text-4xl sm:text-5xl font-extralight text-white"
+            : isActive
+            ? "bg-white text-black shadow-sm text-sm font-medium"
+            : "text-gray-500 hover:text-black text-sm font-medium"
+        }
+      `}
     >
       {label}
     </Link>
