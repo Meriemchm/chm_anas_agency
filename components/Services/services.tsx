@@ -6,18 +6,6 @@ import { motion, cubicBezier } from "framer-motion";
 import { servicesData } from "@/data/ServicesData";
 import { ServiceCard } from "./serviceCard";
 
-const containerVariants = {
-  hidden: { opacity: 1 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
-      ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
-    },
-  },
-};
-
 const itemVariants = {
   hidden: {
     opacity: 0,
@@ -31,7 +19,7 @@ const itemVariants = {
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
     },
   },
@@ -47,30 +35,28 @@ export const Services = () => {
     >
       {/* TITLE */}
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
+        initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="w-full md:w-1/4"
       >
         <h2 className="text-5xl md:text-6xl font-extralight leading-tight">
           Nos <br />
-          <span className="font-serif">
-            services
-          </span>
+          <span className="font-serif">services</span>
         </h2>
       </motion.div>
 
       {/* GRID */}
-      <motion.div
-        className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
+      <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {servicesData.map((service, index) => (
-          <motion.div key={service.id} variants={itemVariants}>
+          <motion.div
+            key={service.id}
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <ServiceCard
               {...service}
               isPrimary={index === 0}
@@ -79,7 +65,7 @@ export const Services = () => {
             />
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };
