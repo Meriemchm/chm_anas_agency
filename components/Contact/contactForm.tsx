@@ -56,8 +56,8 @@ export const ContactForm = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
 
-      {/* 🔥 BIG TITLE
-      <div className="text-left space-y-3">
+      🔥 BIG TITLE
+      <div className=" md:hidden text-left space-y-3">
         <motion.h2
           className="text-4xl md:text-8xl font-bold tracking-tight text-Black"
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export const ContactForm = () => {
           Contact
         </motion.h2>
 
-      </div> */}
+      </div>
 
       {/* FORM / SUCCESS */}
       {isSubmitted ? (

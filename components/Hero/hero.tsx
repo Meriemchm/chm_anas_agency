@@ -92,7 +92,7 @@ export const Hero = () => {
 
             <motion.h1
               variants={textVariants}
-              className="text-5xl md:text-7xl lg:text-[120px] italic text-[#1b1d1e] tracking-tighter leading-[1]"
+              className="text-5xl md:text-7xl lg:text-[120px] italic text-[#1b1d1e] tracking-tighter leading-tight"
             >
               Pygmalion Agency
             </motion.h1>
