@@ -21,8 +21,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pygmalion Agency",
-  description: "Agence de marketing / communication",
+  title: "Pygmalion Agency | Agence de Marketing & Communication",
+  description:
+    "Pygmalion Agency est une agence de marketing et communication.",
+  keywords: [
+    "agence marketing",
+    "agence communication",
+    "Campagnes marketing",
+    "Community management",
+    "Montage & optimisation",
+    "Tournage & production",
+    "Direction artistique",
+    "Création de contenu",
+    "Stratégie & accompagnement",
+  ],
+  authors: [{ name: "Pygmalion Agency" }],
+  creator: "Pygmalion Agency",
+  openGraph: {
+    title: "Pygmalion Agency | Marketing & Communication",
+    description:
+      "Agence spécialisée en marketing et communication.",
+    url: "https://ton-site.com",
+    siteName: "Pygmalion Agency",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pygmalion Agency",
+    description: "Agence de marketing et communication.",
+  },
+  metadataBase: new URL("https://ton-site.com"),
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

@@ -17,8 +17,8 @@ export const Footer = () => {
           brand={footerData.brand}
           social={footerData.social}
         />
-
-        <FooterLinks links={footerData.links} />
+{/* 
+        <FooterLinks links={footerData.links} /> */}
 
         <FooterContact contact={footerData.contact} />
       </div>
