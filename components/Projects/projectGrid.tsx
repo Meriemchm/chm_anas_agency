@@ -35,10 +35,7 @@ export const ProjectGrid = ({
   avatar,
 }: ProjectGridProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+    <div
       className="w-full space-y-10"
     >
       <ProjectVideos projects={projects} />
@@ -49,6 +46,6 @@ export const ProjectGrid = ({
         social={social}
         avatar={avatar}
       />
-    </motion.div>
+    </div>
   );
 };
