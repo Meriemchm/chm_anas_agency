@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 
 interface SmartVideoProps {
   src: string;
+  poster?: string;
   className?: string;
   autoPlay?: boolean;
 }
@@ -11,6 +12,7 @@ interface SmartVideoProps {
 export const SmartVideo = ({
   src,
   className,
+  poster,
   autoPlay = false,
 }: SmartVideoProps) => {
   const ref = useRef<HTMLVideoElement | null>(null);
@@ -52,6 +54,7 @@ export const SmartVideo = ({
       playsInline
       autoPlay={!isMobile && autoPlay} // 💻 desktop only
       preload="auto"
+      poster={poster}
       controls={isMobile} // 📱 show play button on mobile
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

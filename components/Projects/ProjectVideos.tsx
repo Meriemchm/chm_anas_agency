@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 interface Video {
   id: number;
   url: string;
+  poster?: string;
 }
 
 interface Props {
@@ -62,6 +63,7 @@ export const ProjectVideos = ({ projects }: Props) => {
         <SmartVideo
           autoPlay
           src={projects[0]?.url}
+          poster={projects[0]?.poster}
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -80,6 +82,7 @@ export const ProjectVideos = ({ projects }: Props) => {
         >
           <SmartVideo
             src={projects[1]?.url}
+            poster={projects[1]?.poster}
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -90,6 +93,7 @@ export const ProjectVideos = ({ projects }: Props) => {
         >
           <SmartVideo
             src={projects[2]?.url}
+            poster={projects[2]?.poster}
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -102,6 +106,7 @@ export const ProjectVideos = ({ projects }: Props) => {
       >
         <SmartVideo
           src={projects[3]?.url}
+          poster={projects[3]?.poster}
           className="w-full h-full object-cover"
         />
       </motion.div>

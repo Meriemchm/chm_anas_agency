@@ -3,6 +3,7 @@ import React from "react";
 export interface ProjectVideo {
   id: number;
   url: string;
+  poster?: string;
 }
 
 export interface ProjectStats {
@@ -38,10 +39,10 @@ export const projectsData: Record<string, Project> = {
       </>
     ),
     videos: [
-      { id: 5, url: "Videos/Mobile m/million_.mp4" },
-      { id: 6, url: "Videos/Mobile m/redmi bon .mp4" },
-      { id: 7, url: "Videos/Mobile m/REMIS A NEUF .mp4" },
-      { id: 8, url: "Videos/Mobile m/trend .mp4" },
+      { id: 5, url: "Videos/Mobile m/million_.mp4", poster: "Videos/Mobile m/million_.jpg" },
+      { id: 6, url: "Videos/Mobile m/redmi bon .mp4", poster: "Videos/Mobile m/redmi bon .jpg" },
+      { id: 7, url: "Videos/Mobile m/REMIS A NEUF .mp4", poster: "Videos/Mobile m/REMIS A NEUF .jpg" },
+      { id: 8, url: "Videos/Mobile m/trend .mp4", poster: "Videos/Mobile m/trend .jpg" },
     ],
     stats: {
       views: "+2M de vues générées",
@@ -68,10 +69,10 @@ export const projectsData: Record<string, Project> = {
       </>
     ),
     videos: [
-      { id: 5, url: "Videos/La maison crétions/La maison créations 1_.mp4" },
-      { id: 6, url: "Videos/La maison crétions/La maison créations 2.mp4" },
-      { id: 7, url: "Videos/La maison crétions/La maison créations 3.mp4" },
-      { id: 8, url: "Videos/La maison crétions/La maison créations 5.mp4" },
+      { id: 5, url: "Videos/La maison crétions/La maison créations 1_.mp4", poster: "Videos/La maison crétions/La maison créations 1.jpg" },
+      { id: 6, url: "Videos/La maison crétions/La maison créations 2.mp4", poster: "Videos/La maison crétions/La maison créations 2.jpg" },
+      { id: 7, url: "Videos/La maison crétions/La maison créations 3.mp4", poster: "Videos/La maison crétions/La maison créations 3.jpg" },
+      { id: 8, url: "Videos/La maison crétions/La maison créations 5.mp4", poster: "Videos/La maison crétions/La maison créations 5.jpg" },
     ],
     stats: {
       views: "+100 000 vues générées",
@@ -96,10 +97,10 @@ export const projectsData: Record<string, Project> = {
       </>
     ),
     videos: [
-      { id: 1, url: "Videos/Easy démarches/Vidéo 1.mp4" },
-      { id: 2, url: "Videos/Easy démarches/Vidéo 2.mp4" },
-      { id: 3, url: "Videos/Easy démarches/Vidéo 3.mp4" },
-      { id: 4, url: "Videos/Easy démarches/Vidéo 4.mp4" },
+      { id: 1, url: "Videos/Easy démarches/Vidéo 1.mp4", poster: "Videos/Easy démarches/Vidéo 1.jpg" },
+      { id: 2, url: "Videos/Easy démarches/Vidéo 2.mp4", poster: "Videos/Easy démarches/Vidéo 2.jpg" },
+      { id: 3, url: "Videos/Easy démarches/Vidéo 3.mp4", poster: "Videos/Easy démarches/Vidéo 3.jpg" },
+      { id: 4, url: "Videos/Easy démarches/Vidéo 4.mp4", poster: "Videos/Easy démarches/Vidéo 4.jpg" },
     ],
     stats: {
       views: "+100 000 vues générées",
