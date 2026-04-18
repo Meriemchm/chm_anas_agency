@@ -2,7 +2,7 @@
 
 import React from "react";
 import { SmartVideo } from "@/components/ui/SmartVideo";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface Video {
   id: number;
@@ -13,31 +13,34 @@ interface Props {
   projects: Video[];
 }
 
-// ✅ stagger plus naturel
-const container: Variants = {
+// 🔥 Container (stagger propre)
+const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
+      staggerChildren: 0.2,
+      delayChildren: 0.15,
     },
   },
 };
 
-// ✅ animation fluide (NO BLUR ❌)
-const item: Variants = {
+// 🔥 Item (animation premium)
+const item = {
   hidden: {
     opacity: 0,
-    y: 80,
-    scale: 0.96,
+    y: 60,
+    scale: 0.95,
+    filter: "blur(10px)",
   },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1], // 🔥 easing pro (cubic-bezier)
+      type: "spring" as const,
+      stiffness: 120,
+      damping: 18,
     },
   },
 };
@@ -49,12 +52,12 @@ export const ProjectVideos = ({ projects }: Props) => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-100px" }} // 🔥 déclenche plus tôt
+      viewport={{ once: true, amount: 0.25 }}
     >
-      {/* LEFT */}
+      {/* LEFT BIG */}
       <motion.div
         variants={item}
-        className="rounded-3xl overflow-hidden aspect-[9/16] md:h-[500px] will-change-transform"
+        className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:h-[500px]"
       >
         <SmartVideo
           autoPlay
@@ -64,10 +67,16 @@ export const ProjectVideos = ({ projects }: Props) => {
       </motion.div>
 
       {/* MIDDLE */}
-      <div className="grid grid-rows-2 gap-4 md:h-[500px]">
+      <motion.div
+        variants={container}
+        initial="hidden" // ✅ FIX IMPORTANT
+        whileInView="show" // ✅ FIX IMPORTANT
+        viewport={{ once: true, amount: 0.25 }}
+        className="grid grid-rows-2 gap-4 md:h-[500px]"
+      >
         <motion.div
           variants={item}
-          className="rounded-3xl overflow-hidden will-change-transform"
+          className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto"
         >
           <SmartVideo
             src={projects[1]?.url}
@@ -77,19 +86,19 @@ export const ProjectVideos = ({ projects }: Props) => {
 
         <motion.div
           variants={item}
-          className="rounded-3xl overflow-hidden will-change-transform"
+          className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto"
         >
           <SmartVideo
             src={projects[2]?.url}
             className="w-full h-full object-cover"
           />
         </motion.div>
-      </div>
+      </motion.div>
 
-      {/* RIGHT */}
+      {/* RIGHT BIG */}
       <motion.div
         variants={item}
-        className="rounded-3xl overflow-hidden aspect-[9/16] md:h-[500px] will-change-transform"
+        className="rounded-3xl overflow-hidden aspect-[9/16] md:aspect-auto md:h-[500px]"
       >
         <SmartVideo
           src={projects[3]?.url}
