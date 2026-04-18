@@ -19,7 +19,6 @@ export const SmartVideo = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // 📱 detect mobile
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
@@ -27,35 +26,32 @@ export const SmartVideo = ({
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // ▶️ autoplay ONLY desktop
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch (e) {}
-    };
+    const shouldPlay = !isMobile && (autoPlay || isHovered);
 
-    if (!isMobile && (autoPlay || isHovered)) {
-      playVideo();
+    if (shouldPlay) {
+      video.play().catch(() => {});
     } else {
       video.pause();
     }
   }, [autoPlay, isHovered, isMobile]);
 
+  if (!src) return null;
+
   return (
     <video
       ref={ref}
       className={className}
-      muted={!isMobile} // 📱 mobile = unmuted allowed controls
+      muted
       loop
       playsInline
-      autoPlay={!isMobile && autoPlay} // 💻 desktop only
-      preload="auto"
+      autoPlay={!isMobile && autoPlay}
+      preload="metadata"
       poster={poster}
-      controls={isMobile} // 📱 show play button on mobile
+      controls={isMobile}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
