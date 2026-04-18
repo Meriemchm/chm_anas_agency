@@ -15,6 +15,7 @@ export const FooterContact = ({ contact }: any) => {
         <p>
           <Link
             href={`mailto:${contact.email}`}
+            aria-label="Envoyer un email"
             className="hover:text-[#FFF083] transition-colors"
           >
             {contact.email}

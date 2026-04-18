@@ -58,6 +58,7 @@ export const NavLink = ({ label, href, isActive, onClick }: NavLinkProps) => {
   return (
     <Link
       href={href}
+      aria-label={`Lien vers ${label}`}
       onClick={handleClick}
       className={`
         px-6 py-3 rounded-full transition-all duration-300

@@ -67,6 +67,7 @@ export const ContactInfo = () => {
           <Link
             href="mailto:pygmalionagency@gmail.com"
             className="text-black font-medium hover:underline"
+            aria-label="Email"
           >
             pygmalionagency@gmail.com
           </Link>

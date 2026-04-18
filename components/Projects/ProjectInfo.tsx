@@ -87,8 +87,10 @@ export const ProjectInfo = ({
           <div className="flex gap-4">
             {social?.instagram && (
               <Link
+                aria-label="Lien vers Instagram"
                 href={social.instagram}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="size-10 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white/60 hover:text-white/90 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-105"
               >
                 <FaInstagram size={18} />
@@ -97,8 +99,10 @@ export const ProjectInfo = ({
 
             {social?.tiktok && (
               <Link
+                aria-label="Lien vers TikTok"
                 href={social.tiktok}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="size-10 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm flex items-center justify-center text-white/60 hover:text-white/90 hover:border-white/40 hover:bg-white/10 transition-all duration-300 hover:scale-105"
               >
                 <FaTiktok size={18} />

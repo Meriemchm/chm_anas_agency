@@ -65,7 +65,7 @@ export const CtaFooter = () => {
 
           {/* BUTTON */}
           <motion.div variants={itemVariants} className="mt-8">
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Contactez-nous">
               <UIButton variant="dark" icon="/Vector/up-3.svg" iconSize={35}>
                 Contactez nous
               </UIButton>

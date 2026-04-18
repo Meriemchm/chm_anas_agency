@@ -107,7 +107,7 @@ export const Hero = () => {
         </motion.div>
 
         {/* BUTTON */}
-        <Link href="#projects">
+        <Link href="#projects" aria-label="Voir les projets">
           <motion.div
             variants={buttonVariants}
             className="mt-10 md:mt-16 z-10"

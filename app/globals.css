@@ -6,7 +6,6 @@
   --primary: #fff083;
   --secondary: #f4f9fd;
   --font-instrument-serif: var(--font-instrument-serif);
-  --font-inter: "Inter", sans-serif;
 }
 
 @theme inline {

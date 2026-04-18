@@ -64,7 +64,7 @@ export const MobileNavbar = ({ isOpen, setIsOpen }: MobileNavbarProps) => {
           ))}
 
           <motion.div variants={itemVariants}>
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Contactez-nous">
               <button
                 onClick={() => setIsOpen(false)}
                 className="mt-6 px-12 py-4 rounded-full text-xl bg-white text-black"

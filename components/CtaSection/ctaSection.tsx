@@ -65,7 +65,7 @@ const CtaSection: React.FC = () => {
 
           {/* BUTTON */}
           <motion.div variants={itemVariants}>
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Contactez-nous">
               <UIButton variant="white" icon="/Vector/up-2.svg" iconSize={35}>
                 Contactez nous
               </UIButton>

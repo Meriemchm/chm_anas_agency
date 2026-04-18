@@ -13,7 +13,7 @@ export const Navbar = () => {
   return (
     <nav className="relative z-60 md:px-14 px-4 py-4 flex items-center justify-between bg-black lg:bg-white/80 lg:backdrop-blur-md">
       {/* LOGO */}
-      <Link href="/" className="text-2xl text-white lg:text-[#1b1d1e]">
+      <Link href="/" aria-label="Lien vers home" className="text-2xl text-white lg:text-[#1b1d1e]">
         Pygmalion
       </Link>
 
@@ -21,7 +21,7 @@ export const Navbar = () => {
       <DesktopNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* CONTACT */}
-      <Link href="/contact" className="hidden lg:block">
+      <Link href="/contact" aria-label="Lien vers contact" className="hidden lg:block">
         <UIButton variant="dark">Contact</UIButton>
       </Link>
 
