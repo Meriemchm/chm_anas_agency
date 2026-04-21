@@ -144,7 +144,7 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
             {/* <span className="text-gray-400 text-xs tracking-widest block">
               {tag}
             </span> */}
-            <blockquote className="text-4xl md:text-5xl font-serif leading-tight font-extralight text-black pt-4">
+            <blockquote className="text-3xl md:text-5xl font-serif leading-tight font-extralight text-black pt-4">
               {quote}
             </blockquote>
           </div>
