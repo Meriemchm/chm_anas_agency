@@ -45,31 +45,31 @@ export const aboutData: {
       theme: "dark",
       gridSpan: "md:col-span-2", // Prend 2 colonnes sur desktop
     },
-    {
-      id: 2,
-      type: "vision",
-      tag: "CHEZ PYGMALION AGENCY",
-      title: (
-        <>
-          Chez <br />
-          <strong>
-            Pygmalion <br /> Agency
-          </strong>
-        </>
-      ),
-      description:
-        "chaque projet est une opportunité de transformer une idée en contenu vivant et efficace",
-      theme: "yellow",
-    },
-    {
-      id: 3,
-      type: "philosophy",
-      tag: "“FAIRE DE CHAQUE SECONDE UN MOMENT INOUBLIABLE.”",
-      content:
-        "Ce slogan reflète ma philosophie : passion, précision et créativité au service d'un contenu qui touche, inspire et transforme.",
-      imageUrl: "/Images/about-image-2.jpg", // Remplace par ton image réelle
-      theme: "dark_philosophy",
-    },
+    // {
+    //   id: 2,
+    //   type: "vision",
+    //   tag: "CHEZ PYGMALION AGENCY",
+    //   title: (
+    //     <>
+    //       Chez <br />
+    //       <strong>
+    //         Pygmalion <br /> Agency
+    //       </strong>
+    //     </>
+    //   ),
+    //   description:
+    //     "chaque projet est une opportunité de transformer une idée en contenu vivant et efficace",
+    //   theme: "yellow",
+    // },
+    // {
+    //   id: 3,
+    //   type: "philosophy",
+    //   tag: "“FAIRE DE CHAQUE SECONDE UN MOMENT INOUBLIABLE.”",
+    //   content:
+    //     "Ce slogan reflète ma philosophie : passion, précision et créativité au service d'un contenu qui touche, inspire et transforme.",
+    //   imageUrl: "/Images/about-image-2.jpg", // Remplace par ton image réelle
+    //   theme: "dark_philosophy",
+    // },
     {
       id: 4,
       type: "quote",

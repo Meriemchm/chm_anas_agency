@@ -62,44 +62,41 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
       className={`relative ${baseClasses} ${currentTheme}`}
     >
       {type === "bio" && (
-        <>
+        <div className="h-full">
           <div className="absolute top-0 right-0 pointer-events-none">
             <Image
               src="/Vector/ellipse-3.svg"
               alt="decor"
               width={250}
               height={250}
-              className="w-24 h-24 md:w-full md:h-full"
+              className="w-24 h-full md:w-full "
             />
           </div>
 
-          <span className="text-gray-500 text-xs tracking-widest mb-10 block">
+          <span className="text-primary  text-xs tracking-widest mb-10 block">
             {tag}
           </span>
 
           {/* DESKTOP (inchangé) + MOBILE TOGGLE */}
           <div className="group relative">
             {/* COLLAPSED VIEW (mobile + default) md:group-hover:hidden */}
-            <div className="text-sm font-extralight leading-relaxed ">
-              <div className={`${isOpen ? "" : "line-clamp-4"}`}>
-                {content}
-              </div>
+            <div className="md:hidden text-sm font-extralight leading-relaxed ">
+              <div className={`${isOpen ? "" : "line-clamp-4"}`}>{content}</div>
             </div>
 
-            {/* EXPANDED VIEW (desktop hover only) */}
-            {/* <div className="hidden md:group-hover:block text-sm font-extralight leading-relaxed">
-              {content}
-            </div> */}
+            <div className="hidden md:block text-sm font-extralight leading-relaxed ">
+              <div>{content}</div>
+            </div>
 
             {/* MOBILE BUTTON */}
             <button
-              className=" mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4 cursor-pointer"
+              className="md:hidden  mt-4 text-xs tracking-widest uppercase text-white underline underline-offset-4 cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? "Voir moins" : "Voir plus"}
             </button>
           </div>
-        </>
+        </div>
       )}
 
       {type === "vision" && (
@@ -144,15 +141,15 @@ export const AboutCard = ({ card }: { card: CardProps }) => {
       {type === "quote" && (
         <>
           <div className="space-y-4">
-            <span className="text-gray-400 text-xs tracking-widest block">
+            {/* <span className="text-gray-400 text-xs tracking-widest block">
               {tag}
-            </span>
-            <blockquote className="text-4xl md:text-5xl font-['Abel',sans-serif] leading-tight font-light text-black pt-4">
+            </span> */}
+            <blockquote className="text-4xl md:text-5xl font-serif leading-tight font-extralight text-black pt-4">
               {quote}
             </blockquote>
           </div>
 
-          <p className="text-sm md:text-base leading-relaxed text-gray-700 mt-12 font-light max-w-4xl">
+          <p className="text-sm md:text-base leading-relaxed text-gray-700 mt-12 font-light ">
             {description}
           </p>
         </>

@@ -36,7 +36,7 @@ export const About = () => {
 
         {/* GRILLE DE CARTES (Bento Box style) */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible" // Déclenche l'animation quand la grille est visible
